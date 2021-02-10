@@ -22,6 +22,9 @@
             </div>
         </div>
         <div class="flow-root">
+            <template v-if="comments.length == 0">
+                There are no comments yet.
+            </template>
             <ul class="-mb-8">
                 <comment-list v-for="(comment, index) in comments" :comment="comment" :key="index" />
             </ul>

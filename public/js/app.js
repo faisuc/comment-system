@@ -3839,6 +3839,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
 
 
 
@@ -21945,16 +21948,28 @@ var render = function() {
         ])
       : _vm._e(),
     _vm._v(" "),
-    _c("div", { staticClass: "flow-root" }, [
-      _c(
-        "ul",
-        { staticClass: "-mb-8" },
-        _vm._l(_vm.comments, function(comment, index) {
-          return _c("comment-list", { key: index, attrs: { comment: comment } })
-        }),
-        1
-      )
-    ]),
+    _c(
+      "div",
+      { staticClass: "flow-root" },
+      [
+        _vm.comments.length == 0
+          ? [_vm._v("\n            There are no comments yet.\n        ")]
+          : _vm._e(),
+        _vm._v(" "),
+        _c(
+          "ul",
+          { staticClass: "-mb-8" },
+          _vm._l(_vm.comments, function(comment, index) {
+            return _c("comment-list", {
+              key: index,
+              attrs: { comment: comment }
+            })
+          }),
+          1
+        )
+      ],
+      2
+    ),
     _vm._v(" "),
     _c("div", { staticClass: "mt-20" }, [_c("comment-form")], 1)
   ])
